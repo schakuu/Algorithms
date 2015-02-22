@@ -8,8 +8,8 @@ namespace Graphs
 {
     public class UndirectedGraph
     {
-        IList<Edge> _edges = new List<Edge>();
-        IList<Vertex> _vertices = new List<Vertex>();
+        public IList<Edge> _edges = new List<Edge>();
+        public IList<Vertex> _vertices = new List<Vertex>();
 
         public UndirectedGraph()
         {
@@ -35,7 +35,7 @@ namespace Graphs
 
         public void AddLine(string line)
         {
-            var _tokens = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+            var _tokens = line.Split(new string[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
 
             // create this vertex if it does not exist
             // if it does exist, get it from list of vertices
@@ -54,7 +54,7 @@ namespace Graphs
                         _connectedToVertex = new Vertex(_tokens[_i]);
                         _vertices.Add(_connectedToVertex);
                     }
-                    _edges.Add(new Edge(_thisVertex, _connectedToVertex));
+                    _edges.Add(_thisVertex.Connect(_connectedToVertex));
                 }
             }
             else
@@ -71,7 +71,7 @@ namespace Graphs
 
                     var _thisEdge = _edges.SingleOrDefault(_e => { return ((_e.U.Equals(_thisVertex) && _e.V.Equals(_connectedToVertex)) || (_e.V.Equals(_thisVertex) && _e.U.Equals(_connectedToVertex))); });
                     if (_thisEdge == null)
-                        _edges.Add(new Edge(_thisVertex, _connectedToVertex));
+                        _edges.Add(_thisVertex.Connect(_connectedToVertex));
                 }
             }
 

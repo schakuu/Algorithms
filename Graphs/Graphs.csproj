@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BFSearch.cs" />
+    <Compile Include="DFSearch.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Edge2.cs" />
     <Compile Include="UndirectedGraph.cs" />

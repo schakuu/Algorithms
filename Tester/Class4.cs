@@ -13,11 +13,13 @@ namespace Tester
     {
         public static void Main(string[] args)
         {
-            //var _g1 = new UndirectedGraph();
-            //_g1.AddLine("1  2   3");
-            //_g1.AddLine("2  1   3   4");
-            //_g1.AddLine("3  1   2   4");
-            //_g1.AddLine("4  2   3");
+            var _g1 = new UndirectedGraph();
+            _g1.AddLine("1  2   3");
+            _g1.AddLine("2  1   3   4");
+            _g1.AddLine("3  1   2   4");
+            _g1.AddLine("4  2   3");
+            new BFSearch().DoBreadthFirstSearch(_g1, _g1._vertices[0]);
+
             //Console.WriteLine("Min Cut [{0}]", _g1.FindMinCut());
 
             //var _g2 = new UndirectedGraph2();
@@ -38,12 +40,14 @@ namespace Tester
             //_g3.AddLine("8 7 5 6");
             //Console.WriteLine("Min Cut [{0}]", _g3.FindMinCut());
 
-            var _g4 = new UndirectedGraph2();
+            var _g4 = new UndirectedGraph();
             var _lines = File.ReadAllLines("kargerMinCut.txt");
             foreach (var _l in _lines)
                 _g4.AddLine(_l);
+            new BFSearch().DoBreadthFirstSearchWithDistance(_g4, _g4._vertices[0]);
 
-            Console.WriteLine("Min Cut [{0}]", _g4.FindMinCut());
+
+            //Console.WriteLine("Min Cut [{0}]", _g4.FindMinCut());
 
         }
     }

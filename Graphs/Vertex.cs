@@ -9,7 +9,7 @@ namespace Graphs
     public class Vertex : IEqualityComparer<Vertex>
     {
         public String Name {get; set;} 
-        private List<Edge> _connectedEdges = new List<Edge>();
+        public List<Edge> _connectedEdges = new List<Edge>();
 
         public Vertex(String name) 
         {
