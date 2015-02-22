@@ -19,6 +19,7 @@ namespace Tester
             _g1.AddLine("3  1   2   4");
             _g1.AddLine("4  2   3");
             new BFSearch().DoBreadthFirstSearch(_g1, _g1._vertices[0]);
+            new DFSearch().DoDepthFirstSearch(_g1, _g1._vertices[0]);
 
             //Console.WriteLine("Min Cut [{0}]", _g1.FindMinCut());
 
@@ -45,7 +46,7 @@ namespace Tester
             foreach (var _l in _lines)
                 _g4.AddLine(_l);
             new BFSearch().DoBreadthFirstSearchWithDistance(_g4, _g4._vertices[0]);
-
+            new DFSearch().DoDepthFirstSearch(_g4, _g4._vertices[0]);
 
             //Console.WriteLine("Min Cut [{0}]", _g4.FindMinCut());
 
