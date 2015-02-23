@@ -41,8 +41,12 @@
   <ItemGroup>
     <Compile Include="BFSearch.cs" />
     <Compile Include="DFSearch.cs" />
+    <Compile Include="DirectedEdge.cs" />
+    <Compile Include="DirectedGraph.cs" />
+    <Compile Include="DirectedVertex.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Edge2.cs" />
+    <Compile Include="StronglyConnectedComponentSearch.cs" />
     <Compile Include="UndirectedGraph.cs" />
     <Compile Include="UndirectedGraph2.cs" />
     <Compile Include="Vertex.cs" />

@@ -11,7 +11,7 @@ namespace Tester
 {
     public class Class4
     {
-        public static void Main(string[] args)
+        public static void Main4(string[] args)
         {
             var _g1 = new UndirectedGraph();
             _g1.AddLine("1  2   3");
@@ -20,8 +20,7 @@ namespace Tester
             _g1.AddLine("4  2   3");
             new BFSearch().DoBreadthFirstSearch(_g1, _g1._vertices[0]);
             new DFSearch().DoDepthFirstSearch(_g1, _g1._vertices[0]);
-
-            //Console.WriteLine("Min Cut [{0}]", _g1.FindMinCut());
+            Console.WriteLine("Min Cut [{0}]", _g1.FindMinCut());
 
             //var _g2 = new UndirectedGraph2();
             //_g2.AddLine("1  2   3");
@@ -47,8 +46,7 @@ namespace Tester
                 _g4.AddLine(_l);
             new BFSearch().DoBreadthFirstSearchWithDistance(_g4, _g4._vertices[0]);
             new DFSearch().DoDepthFirstSearch(_g4, _g4._vertices[0]);
-
-            //Console.WriteLine("Min Cut [{0}]", _g4.FindMinCut());
+            Console.WriteLine("Min Cut [{0}]", _g4.FindMinCut());
 
         }
     }
